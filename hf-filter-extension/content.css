@@ -1,0 +1,7 @@
+/* content.css
+   Intentionally empty: this extension no longer draws any custom UI on
+   huggingface.co. It edits Hugging Face's own rendered cards in place
+   (removing blocked ones, cloning survivors to backfill new ones), so it
+   inherits 100% of HF's existing styling — light/dark theme, hover states,
+   spacing — with nothing of ours layered on top.
+*/

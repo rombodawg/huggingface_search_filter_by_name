@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "HF Hub Filter",
+  "version": "1.0.0",
+  "description": "Filter Hugging Face model/dataset/space search results by model name or author/username. Removed results are backfilled so the page still shows a full set.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "HF Hub Filter"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://huggingface.co/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://huggingface.co/models*",
+        "https://huggingface.co/datasets*",
+        "https://huggingface.co/spaces*",
+        "https://huggingface.co/search*",
+        "https://huggingface.co/*?*search=*"
+      ],
+      "js": ["filters.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
