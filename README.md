@@ -21,3 +21,5 @@ This is a Manifest V3 extension and works in any Chromium-based browser. Load it
 7. Click "Select" on the open window
 
 > **Firefox is not supported.** Firefox uses a different extension format (Manifest V2/V3 with different APIs, loaded via `about:debugging#/runtime/this-firefox` or signed `.xpi` packaging), and this extension hasn't been ported to it.
+
+(Developer note: Extension is currently buggy, sometimes requiring a browser refresh after filters are applied, or after going to the next page, in order for results to display correctly.)
